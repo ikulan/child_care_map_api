@@ -1,24 +1,41 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Versions:**
 
-Things you may want to cover:
+- Ruby 3.4.4
+- Rails 8.0.2
+- PostgreSQL 17.5
 
-* Ruby version
+## Set up local dev environment
 
-* System dependencies
+1. Make sure PostgreSQL service is running.
 
-* Configuration
+```shell
+# check the running services
+brew services list
 
-* Database creation
+# start postgre
+brew services start postgresql@17
+```
 
-* Database initialization
+2. Install dependencies
 
-* How to run the test suite
+```shell
+bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+3. Create database and run migrations
 
-* Deployment instructions
+```
+bin/rails db:create
 
-* ...
+bin/rails db:migrate
+```
+
+## Run services
+
+- API server
+
+```
+bin/rails server
+```
